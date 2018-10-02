@@ -1,0 +1,147 @@
+%% Basierend auf einer TeXnicCenter-Vorlage von Tino Weinkauf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[addressstd,a4paper,10pt]{dinbrief}
+% Alternative Settings:
+%		a4paper / letter
+%   addressstd / addresshigh
+
+
+%% Deutsche Anpassungen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{hyperref}
+\usepackage{eqparbox}
+\usepackage{color}
+
+
+
+
+
+
+%\usepackage{lmodern} %Type1-Schriftart für nicht-englische Texte
+
+%\usepackage{svg}
+%\setsvg{inkscape = inkscape -z -D}
+
+%% Packages für Grafiken & Abbildungen %%%%%%%%%%%%%%%%%%%%%%
+\usepackage{graphicx} %%Zum Laden von Grafiken
+%\usepackage{subfig} %%Teilabbildungen in einer Abbildung
+%\usepackage{pst-all} %%PSTricks - nicht verwendbar mit pdfLaTeX
+
+%% Beachten Sie:
+%% Die Einbindung einer Grafik erfolgt mit \includegraphics{Dateiname}
+%% bzw. über den Dialog im Einfügen-Menü.
+%% 
+%% Im Modus "LaTeX => PDF" können Sie u.a. folgende Grafikformate verwenden:
+%%   .jpg  .png  .pdf  .mps
+%% 
+%% In den Modi "LaTeX => DVI", "LaTeX => PS" und "LaTeX => PS => PDF"
+%% können Sie u.a. folgende Grafikformate verwenden:
+%%   .eps  .ps  .bmp  .pict  .pntg
+
+
+%% Kommandos zur Anpassung %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\renewcommand{\ccname}{\tt Verteiler}
+%%\renewcommand{\enclname}{\tt Anlage(n)}
+%\renewcommand{\psname}{PS}
+%\renewcommand{\phonemsg}{\tt Telefon}
+%\renewcommand{\signmsgold}{\tt Unsere Zeichen}
+%\renewcommand{\signmsgnew}{\tt Unsere Zeichen, unsere Nachricht vom}
+%\renewcommand{\yourmailmsg}{\tt Ihre Zeichen, Ihre Nachricht vom}
+
+
+%% Absenderaddresse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\address{\vspace{2cm} \bfseries \large Antrag auf Mitgliedschaft im Hackzogtum Coburg e.V.}
+%Straße Nr. 1\\
+%11111 Stadt}
+
+%\place{Stadt}
+%\phone{030}{11111111}
+\signature{Vorname Nachname}
+
+%\nobackaddressrule
+%\backaddress{Vorname Nachname, Straße Nr. 1, 11111 Stadt}
+
+
+%% Text am Ende des Briefes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bottomtext{%
+  %\makebox[\textwidth][c]{\small\scshape
+   %Bankverbindung $\cdot$ Web Adresse $\cdot$ Andere Informationen
+  %}
+%}
+%
+
+%% Datum %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\date{} %%Wenn kommentiert, wird das aktuelle Datum verwendet
+
+
+%% Etiketten %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\labelstyle{plain} %%Art der Etiketten: nur plain möglich
+%\makelabels %%Generiert Etiketten
+
+
+%% Styles %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\nowindowrules %%Keinen Rahmen um die Empfängeraddresse
+%\nowindowtics %%Keine Faltkennzeichnungen
+\centeraddress %%Vertikale Zentrierung der Empfängeraddresse
+\pagestyle{empty} %%Keine Kopf- oder Fußzeilen
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kommandos für Form %%
+%\newcommand{\formField}[2][5cm]{\vspace{.3cm} \bfseries #2: $\>$ \rule{#1}{.3pt} \\ \normalfont} 
+\renewcommand\LayoutTextField[2]{\eqparbox{label}{#1} #2 \vspace{.15cm}}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT - BRIEF(E)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%% Beginn des Briefes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{letter}{Hackzogtum Coburg e.V.\\
+               Geleitstraße 10\\[\medskipamount]
+               96450 Coburg}
+
+
+\begin{picture}(0,0)(-280,180)
+		\includegraphics[width=0.40\textwidth]{logo}
+\end{picture}
+
+
+\opening{}
+\vspace{-.7cm}
+
+
+
+
+\input{antragForm}
+
+
+
+\vspace{-.3cm}
+%\input{einzug_normal}   
+\input{einzug_sepa}   
+
+\input{signing}
+
+
+
+\vspace{-.58cm}
+\begin{center}
+\tiny powered by \LaTeX{}
+\end{center}
+
+
+\end{letter}
+
+\end{document}
